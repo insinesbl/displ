@@ -5,7 +5,7 @@ import { modalWindow } from './modal-window.js'
  */
 export const addAllListiners = () => {
   // disabled scroll after open menu hamburger mobile
-  document.querySelector('[data-menu-icon]').addEventListener('click', () => {
+  document.querySelector('[data-menu-icon]')?.addEventListener('click', () => {
     document.body.classList.toggle('overflow-hidden')
   })
 
