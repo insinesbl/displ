@@ -25,7 +25,7 @@ export const addAllListiners = () => {
       modalWindow.open(modal)
 
       if (modal === 'cookie-preferences') {
-        document.querySelector('[data-cookie="wrapper"]').style.display = 'none'
+        document.querySelector('[data-cookie="wrapper"]')?.style.display = 'none'
       }
     })
   })
