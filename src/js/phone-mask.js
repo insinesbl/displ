@@ -1,9 +1,17 @@
 import { loadScript } from './utils/load-script.js'
+import { loadStyles } from './utils/load-styles.js'
 
 /**
  * Phone mask with flags
  */
 export const phoneMask = async () => {
+  loadStyles(
+    'https://cdn.jsdelivr.net/npm/intl-tel-input@20.0.3/build/css/intlTelInput.min.css'
+  )
+  await loadScript(
+    'https://cdn.jsdelivr.net/npm/intl-tel-input@20.0.3/build/js/intlTelInput.min.js'
+  )
+
   await loadScript(
     'https://cdn.jsdelivr.net/npm/intl-tel-input@20.0.3/build/js/utils.min.js'
   )
@@ -78,5 +86,7 @@ export const phoneMask = async () => {
         }
       }
     })
+
+    $input.prop('disabled', false)
   })
 }

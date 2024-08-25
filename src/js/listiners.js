@@ -1,4 +1,5 @@
 import { modalWindow } from './modal-window.js'
+import { phoneMask } from './phone-mask.js'
 import { topBannerToggle } from './top-banner-toggle.js'
 
 /**
@@ -62,7 +63,16 @@ export const addAllListiners = () => {
         .parents('[data-case="trigger"], [data-video="trigger"]')
         .on('mouseover', ({ currentTarget }) => {
           $(currentTarget).find('[data-video-icon]').addClass('video--active')
-          video.play()
+          video.play().catch(error => {
+            if (error.name === 'AbortError') {
+              console.log('play() was interrupted by pause().')
+            } else {
+              console.error(
+                'Error occurred while trying to play the video:',
+                error
+              )
+            }
+          })
         })
       $(video)
         .parents('[data-case="trigger"],  [data-video="trigger"]')
@@ -70,7 +80,10 @@ export const addAllListiners = () => {
           $(currentTarget)
             .find('[data-video-icon]')
             .removeClass('video--active')
-          video.pause()
+
+          if (!video.paused) {
+            video.pause()
+          }
         })
     })
   }
@@ -92,5 +105,22 @@ export const addAllListiners = () => {
       $(currentTarget).find('[data-video-icon]').removeClass('video--active')
       videoControl.trigger('click')
     })
+  })
+
+  // Phone input
+  $('input[type=tel]').each((index, input) => {
+    const $input = $(input)
+    $input.prop('disabled', true) // start disabled
+  })
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        phoneMask()
+        observer.unobserve(entry.target)
+      }
+    })
+  }, {})
+  document.querySelectorAll('input[type="tel"]').forEach(input => {
+    observer.observe(input)
   })
 }

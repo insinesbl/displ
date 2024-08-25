@@ -11,7 +11,6 @@ import {
 import { fixAnchorLinks } from './fix-anchor-links.js'
 
 $(() => {
-  phoneMask()
   checkCookie()
   setRefUrl()
   setUTMCookies()
