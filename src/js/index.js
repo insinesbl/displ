@@ -10,6 +10,13 @@ import {
 } from './cookies-manager.js'
 import { fixAnchorLinks } from './fix-anchor-links.js'
 
+if (window.innerWidth < 767) {
+  document.querySelectorAll('video[data-desktop-flex]').forEach(video => {
+    video.removeAttribute('src')
+    video.load()
+  })
+}
+
 $(() => {
   phoneMask()
   checkCookie()
