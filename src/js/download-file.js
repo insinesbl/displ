@@ -13,11 +13,11 @@ export const downloadFile = url => {
       downloadLink.download = url.split('/').pop() // set file name
 
       // add link to DOM
-      document.body?.appendChild(downloadLink)
+      document.body.appendChild(downloadLink)
       downloadLink.click()
 
       // remove link to DOM
-      document.body?.removeChild(downloadLink)
+      document.body.removeChild(downloadLink)
       window.URL.revokeObjectURL(blobUrl)
     })
     .catch(error => console.error('Fetch error:', error))

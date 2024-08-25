@@ -7,4 +7,4 @@ const host =
 script.type = 'module'
 script.async = true
 script.src = `${host}/src/js/index.js`
-document.body?.appendChild(script)
+document.body.appendChild(script)

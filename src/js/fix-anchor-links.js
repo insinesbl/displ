@@ -2,32 +2,16 @@
  * Fix anchor links
  */
 export const fixAnchorLinks = () => {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', event => {
-      const href = event.currentTarget.getAttribute('href')
+  $('a[href^="#"]').on('click', event => {
+    const href = $(event.currentTarget).attr('href')
 
-      if (href.length < 2 || href.includes('w-tabs')) {
-        return
-      }
+    if (href.length < 2 || href.includes('w-tabs')) {
+      return
+    }
 
-      event.preventDefault()
+    event.preventDefault()
+    event.stopPropagation()
 
-      const targetElement = document.querySelector(href)
-      if (!targetElement) {
-        return
-      }
-
-      const top =
-        window.innerWidth > 767
-          ? targetElement.getBoundingClientRect().top + window.scrollY - 100
-          : targetElement.getBoundingClientRect().top + window.scrollY - 86
-
-      window.scrollTo({
-        top: top,
-        behavior: 'smooth',
-      })
-
-      window.location.hash = href
-    })
+    $('html, body').animate({ scrollTop: $(href).offset().top - 100 }, 800)
   })
 }
