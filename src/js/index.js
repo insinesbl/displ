@@ -1,4 +1,3 @@
-import { phoneMask } from './phone-mask.js'
 import { addAllListiners } from './listiners.js'
 import { moveLastItemCase } from './move-last-case.js'
 import {
@@ -19,4 +18,6 @@ $(() => {
   addAllListiners() // add all listiners
   fixAnchorLinks() // fix anchor links
   moveLastItemCase() // Last item in cases move to grid cases
+
+  updateBlogGrid()
 })
