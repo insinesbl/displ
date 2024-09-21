@@ -1,5 +1,6 @@
 import { addAllListiners } from './listiners.js'
 import { moveLastItemCase } from './move-last-case.js'
+import { updateBlogGrid } from './update-blog-grid.js'
 import {
   checkCookie,
   setRefUrl,
