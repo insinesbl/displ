@@ -1,5 +1,8 @@
 export const updateBlogGrid = () => {
-  if (window.location.pathname.includes('blog')) {
+  if (!window.location.pathname.includes('blog')) return
+  if (window.location.pathname.split('/')[2]) return
+
+  setTimeout(() => {
     const firstItem = document.querySelector(
       '[data-resources="item"]:nth-child(1)'
     )
@@ -27,5 +30,5 @@ export const updateBlogGrid = () => {
       thirdItem.insertAdjacentElement('afterend', cta)
       firstItem.insertAdjacentElement('afterend', subscribeTop)
     }
-  }
+  }, 500)
 }
