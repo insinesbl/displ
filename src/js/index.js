@@ -1,6 +1,8 @@
 import { addAllListiners } from './listiners.js'
 import { moveLastItemCase } from './move-last-case.js'
-import { updateBlogGrid } from './update-blog-grid.js'
+
+import { fixAnchorLinks } from './fix-anchor-links.js'
+
 import {
   checkCookie,
   setRefUrl,
@@ -8,9 +10,14 @@ import {
   sendParamsToPlatform,
   addFormInputs,
 } from './cookies-manager.js'
-import { fixAnchorLinks } from './fix-anchor-links.js'
+
+import { updateBlogGrid } from './blog/update-blog-grid.js'
+import { updateArticleContent } from './blog/update-article-content.js'
 
 $(() => {
+  updateBlogGrid()
+  updateArticleContent()
+
   checkCookie()
   setRefUrl()
   setUTMCookies()
@@ -19,6 +26,4 @@ $(() => {
   addAllListiners() // add all listiners
   fixAnchorLinks() // fix anchor links
   moveLastItemCase() // Last item in cases move to grid cases
-
-  updateBlogGrid()
 })
