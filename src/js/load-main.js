@@ -3,7 +3,7 @@ const script = document.createElement('script')
 const host =
   localDev === '1'
     ? 'http://localhost:5500'
-    : 'https://cdn.jsdelivr.net/gh/insinesbl/displ@v1.0.16'
+    : 'https://cdn.jsdelivr.net/gh/insinesbl/displ@v1.0.17'
 script.type = 'module'
 script.async = true
 script.src = `${host}/src/js/index.js`

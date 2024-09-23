@@ -3,16 +3,19 @@ export const updateBlogGrid = () => {
   if (window.location.pathname.split('/')[2]) return
 
   setTimeout(() => {
-    const firstItem = document.querySelector(
+    const mainArticlesList = document.querySelector(
+      '[data-resources="main-list"]'
+    )
+    const firstItem = mainArticlesList.querySelector(
       '[data-resources="item"]:nth-child(1)'
     )
-    const secondItem = document.querySelector(
+    const secondItem = mainArticlesList.querySelector(
       '[data-resources="item"]:nth-child(2)'
     )
-    const thirdItem = document.querySelector(
+    const thirdItem = mainArticlesList.querySelector(
       '[data-resources="item"]:nth-child(3)'
     )
-    const fourthItem = document.querySelector(
+    const fourthItem = mainArticlesList.querySelector(
       '[data-resources="item"]:nth-child(4)'
     )
     const subscribeTop = document.querySelector('[data-subscribe-first]')
