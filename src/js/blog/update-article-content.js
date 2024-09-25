@@ -3,7 +3,7 @@ import { createArticleQuote } from './create-article-quote.js'
 export const updateArticleContent = () => {
   const pathname = window.location.pathname
 
-  if (pathname.includes('/blog/') || pathname.includes('/customer-projects/'))
+  if (pathname.includes('/blog/') || pathname.includes('/customer-projects/')) {
     document
       .querySelectorAll('[data-article="content"] p')
       .forEach(paragraph => {
@@ -13,4 +13,5 @@ export const updateArticleContent = () => {
           createArticleQuote(paragraph)
         }
       })
+  }
 }
