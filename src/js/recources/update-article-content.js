@@ -4,14 +4,12 @@ export const updateArticleContent = () => {
   const pathname = window.location.pathname
 
   if (pathname.includes('/blog/') || pathname.includes('/customer-projects/')) {
-    document
-      .querySelectorAll('[data-article="content"] p')
-      .forEach(paragraph => {
-        const text = paragraph.textContent
+    document.querySelectorAll('p').forEach(paragraph => {
+      const text = paragraph.textContent
 
-        if (text.includes('<<Quote')) {
-          createArticleQuote(paragraph)
-        }
-      })
+      if (text.includes('{{Quote') || text.includes('<<Quote')) {
+        createArticleQuote(paragraph)
+      }
+    })
   }
 }

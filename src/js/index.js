@@ -11,8 +11,8 @@ import {
   addFormInputs,
 } from './cookies-manager.js'
 
-import { updateBlogGrid } from './blog/update-blog-grid.js'
-import { updateArticleContent } from './blog/update-article-content.js'
+import { updateBlogGrid } from './recources/update-blog-grid.js'
+import { updateArticleContent } from './recources/update-article-content.js'
 
 $(() => {
   updateBlogGrid()
