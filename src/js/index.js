@@ -13,10 +13,12 @@ import {
 
 import { updateBlogGrid } from './recources/update-blog-grid.js'
 import { updateArticleContent } from './recources/update-article-content.js'
+import { updateCasesContent } from './recources/update-cases-content.js'
 
 $(() => {
   updateBlogGrid()
   updateArticleContent()
+  updateCasesContent()
 
   checkCookie()
   setRefUrl()
