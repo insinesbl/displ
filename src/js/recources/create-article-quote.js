@@ -4,7 +4,7 @@ export const createArticleQuote = paragraph => {
 
   if ((parts.length = 4)) {
     const text = parts[1].trim().replace('}}', '')
-    const author = parts[2] ? parts[2].trim() : ''
+    const author = parts[2] ? parts[2].trim().replace('}}', '') : ''
     const position = parts[3] ? parts[3].trim().replace('}}', '') : ''
 
     const quoteElement = document.querySelector('[data-article="quote"]')
