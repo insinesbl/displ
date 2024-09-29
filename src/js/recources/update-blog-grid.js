@@ -2,6 +2,15 @@ export const updateBlogGrid = () => {
   if (!window.location.pathname.includes('blog')) return
   if (window.location.pathname.split('/')[2]) return
 
+  const dynamicLists = document.querySelectorAll(
+    '[data-resources="large-list-wrap"]'
+  )
+  dynamicLists.forEach(list => {
+    if (list.querySelector('.w-dyn-empty')) {
+      list.classList.add('hide')
+    }
+  })
+
   setTimeout(() => {
     const mainArticlesList = document.querySelector(
       '[data-resources="main-list"]'
