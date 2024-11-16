@@ -1,7 +1,7 @@
 const lightboxWrapper = document.querySelector('[data-lightbox="wrap"]')
 
 const closeLightbox = () => {
-  lightboxWrapper.classList.add('hide')
+  lightboxWrapper?.classList.add('hide')
   document.removeEventListener('keydown', onLightboxEscKeydown)
 }
 

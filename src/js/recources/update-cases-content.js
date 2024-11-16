@@ -41,7 +41,7 @@ export const updateCasesContent = () => {
       '[data-article-case="media-img-large"]'
     )
 
-    largeImage.addEventListener('click', event => {
+    largeImage?.addEventListener('click', event => {
       event.preventDefault()
       openLightbox(event.currentTarget.getAttribute('src'))
     })

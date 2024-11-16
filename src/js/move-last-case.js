@@ -4,7 +4,8 @@
 export const moveLastItemCase = () => {
   const casesList = document.querySelector('[data-cases="list"]')
   const lastItem = document.querySelector('[data-cases="last-item"]')
-  if (casesList) {
+
+  if (casesList && lastItem) {
     lastItem.classList.remove('hide')
     casesList.appendChild(lastItem)
   }
