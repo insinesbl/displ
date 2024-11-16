@@ -22,5 +22,5 @@ export const openLightbox = imageSrc => {
   const lightboxCloseButton = lightboxWrapper.querySelector(
     '[data-lightbox="close"]'
   )
-  lightboxCloseButton.addEventListener('click', () => closeLightbox())
+  lightboxCloseButton?.addEventListener('click', () => closeLightbox())
 }

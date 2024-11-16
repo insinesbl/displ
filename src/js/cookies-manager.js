@@ -8,7 +8,7 @@ export const COOKIE_ANALYTICS = ['bcookie', 'bscookie', 'AnalyticsSyncHistory']
 // Removes marketing or analytics cookies if user has denied consent.
 export const checkCookie = () => {
   if (!Cookies.get('cookies_agreement')) {
-    document.querySelector('[data-cookie="wrapper"]')?.style.display = 'block'
+    document.querySelector('[data-cookie="wrapper"]').style.display = 'block'
   }
 
   if (Cookies.get('cdispl_marketing') === 'deny') {
@@ -113,7 +113,7 @@ document
     Cookies.set(`cdispl_analytics`, 'allow', { expires: 31 })
 
     Cookies.set('cookies_agreement', 'accepted', { expires: 31 })
-    document.querySelector('[data-cookie="wrapper"]')?.style.display = 'none'
+    document.querySelector('[data-cookie="wrapper"]').style.display = 'none'
   })
 
 document
@@ -144,7 +144,7 @@ document
 // listener reject all cookies
 document
   .querySelector('[data-cookie="reject-all"]')
-  .addEventListener('click', ({ currentTarget }) => {
+  ?.addEventListener('click', ({ currentTarget }) => {
     if (!(currentTarget instanceof HTMLElement)) {
       return
     }
