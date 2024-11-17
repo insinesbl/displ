@@ -14,6 +14,8 @@ import {
 import { updateBlogGrid } from './recources/update-blog-grid.js'
 import { updateArticleContent } from './recources/update-article-content.js'
 import { updateCasesContent } from './recources/update-cases-content.js'
+import { addDropDownListeners } from './add-dropdown-listeners.js'
+import { addActiveFromScrollDataRoom } from './add-class-from-scroll.js'
 
 $(() => {
   updateBlogGrid()
@@ -28,4 +30,12 @@ $(() => {
   addAllListiners() // add all listiners
   fixAnchorLinks() // fix anchor links
   moveLastItemCase() // Last item in cases move to grid cases
+
+  if (document.querySelectorAll('[data-dropdown]').length > 0) {
+    addDropDownListeners()
+  }
+
+  if (window.location.pathname === '/resources/data-room') {
+    addActiveFromScrollDataRoom()
+  }
 })
