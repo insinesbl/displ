@@ -16,12 +16,14 @@ import { updateArticleContent } from './recources/update-article-content.js'
 import { updateCasesContent } from './recources/update-cases-content.js'
 import { addDropDownListeners } from './add-dropdown-listeners.js'
 import { addActiveFromScrollDataRoom } from './add-class-from-scroll.js'
+import { updateLocalDropdown } from './update-local-dropdown.js'
 
 $(() => {
   updateBlogGrid()
   updateArticleContent()
   updateCasesContent()
 
+  updateLocalDropdown()
   checkCookie()
   setRefUrl()
   setUTMCookies()
