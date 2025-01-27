@@ -36,6 +36,10 @@ export const phoneMask = async () => {
       $input.attr('data-name', `phone-${index}`)
       $input.parents('.input__wrap').css('z-index', '3')
 
+      let aditionalInput = 'phone'
+      const isLeadNumber = $input.data('type-phone')
+      if (isLeadNumber === 'lead') aditionalInput = 'phone-lead'
+
       const iti = window.intlTelInput(input, {
         autoInsertDialCode: true,
         countrySearch: true,
@@ -48,7 +52,7 @@ export const phoneMask = async () => {
         showSelectedDialCode: true,
         hiddenInput: function (telInputName) {
           return {
-            phone: 'phone',
+            phone: aditionalInput,
           }
         },
       })
@@ -66,13 +70,15 @@ export const phoneMask = async () => {
 
         const phoneNumber = iti.getNumber()
         if (!phoneNumber || !iti.isValidNumber()) {
-          $input.siblings($('input[name="phone"]')).attr('data-name', 'phone')
+          $input
+            .siblings($(`input[name="${aditionalInput}"]`))
+            .attr('data-name', 'phone')
           $input.addClass('input--error')
           $input
             .parents('form')
             .find('input[type="submit"]')
             .prop('disabled', true)
-          $input.siblings($('input[name="phone"]')).val('')
+          $input.siblings($(`input[name="${aditionalInput}"]`)).val('')
 
           if ($input.parents('form').find('.input__text-error').length === 0) {
             $input.after(
@@ -91,7 +97,7 @@ export const phoneMask = async () => {
             .parents('form')
             .find('input[type="submit"]')
             .prop('disabled', false)
-          $input.siblings($('input[name="phone"]')).val(phoneNumber)
+          $input.siblings($(`input[name="${aditionalInput}"]`)).val(phoneNumber)
         }
       })
 
