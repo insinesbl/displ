@@ -12,6 +12,7 @@ export const modalWindow = {
     })
     const modalsWrap = document.querySelector('[data-modals]')
     const modalItem = document.querySelector(`[data-modal="${item}"]`)
+    const modalsWrapBg = modalItem.querySelector('[data-modal-bg]')
 
     if (modalsWrap) {
       modalsWrap.style.display = 'flex'
@@ -20,6 +21,10 @@ export const modalWindow = {
       modalsWrap.style.top = '0'
       modalsWrap.style.right = '0'
       modalsWrap.style.bottom = '0'
+    }
+
+    if (modalsWrapBg) {
+      modalsWrapBg.style.position = 'fixed'
     }
 
     if (modalItem) {

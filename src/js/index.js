@@ -40,4 +40,69 @@ $(() => {
   if (window.location.pathname === '/resources/data-room') {
     addActiveFromScrollDataRoom()
   }
+
+  // Say about us slider
+  const sliderAboutUs = document.querySelector('[data-slider="about-us"]')
+  if (sliderAboutUs) {
+    new Swiper(sliderAboutUs, {
+      spaceBetween: 10,
+      grabCursor: true,
+      navigation: {
+        disabledClass: 'disabled',
+        nextEl: '[data-slider-arrow="next"]',
+        prevEl: '[data-slider-arrow="prev"]',
+      },
+      breakpoints: {
+        1920: {
+          slidesPerView: 1.4,
+        },
+        1440: {
+          slidesPerView: 1.4,
+        },
+        992: {
+          slidesPerView: 1.3,
+        },
+        768: {
+          slidesPerView: 1.2,
+        },
+        320: {
+          slidesPerView: 1.1,
+        },
+      },
+    })
+  } else {
+    console.warn('Swiper slider [data-sliderabout-us"] not found.')
+  }
+
+  const sliderReview = document.querySelector('[data-slider="reviews"]')
+  if (sliderReview) {
+    new Swiper(sliderReview, {
+      spaceBetween: 10,
+      grabCursor: true,
+      navigation: {
+        disabledClass: 'disabled',
+        nextEl: '[data-slider-arrow="next"]',
+        prevEl: '[data-slider-arrow="prev"]',
+      },
+      breakpoints: {
+        1920: {
+          slidesPerView: 3.3,
+        },
+        1440: {
+          slidesPerView: 3.2,
+        },
+        992: {
+          slidesPerView: 2.1,
+        },
+        768: {
+          slidesPerView: 1.9,
+        },
+        320: {
+          slidesPerView: 1.2,
+        },
+      },
+    })
+  } else {
+    console.warn('Swiper review slider not found.')
+  }
 })

@@ -13,6 +13,17 @@ export const addAllListiners = () => {
       topBannerToggle('hide')
     })
 
+  // Play button / Hover
+  document.querySelectorAll('[data-play-button="button"]').forEach(button => {
+    button.addEventListener('mouseenter', () => {
+      button.setAttribute('data-play-button-theme', 'grape')
+    })
+
+    button.addEventListener('mouseleave', () => {
+      button.removeAttribute('data-play-button-theme')
+    })
+  })
+
   // disabled scroll after open menu hamburger mobile
   document.querySelector('[data-menu-icon]')?.addEventListener('click', () => {
     document.body.classList.toggle('overflow-hidden')
