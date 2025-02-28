@@ -46,28 +46,12 @@ $(() => {
   if (sliderAboutUs) {
     new Swiper(sliderAboutUs, {
       spaceBetween: 10,
+      slidesPerView: 'auto',
       grabCursor: true,
       navigation: {
         disabledClass: 'disabled',
         nextEl: '[data-slider-arrow="next"]',
         prevEl: '[data-slider-arrow="prev"]',
-      },
-      breakpoints: {
-        1920: {
-          slidesPerView: 1.4,
-        },
-        1440: {
-          slidesPerView: 1.4,
-        },
-        992: {
-          slidesPerView: 1.3,
-        },
-        768: {
-          slidesPerView: 1.2,
-        },
-        320: {
-          slidesPerView: 1.1,
-        },
       },
     })
   } else {
@@ -78,28 +62,12 @@ $(() => {
   if (sliderReview) {
     new Swiper(sliderReview, {
       spaceBetween: 10,
+      slidesPerView: 'auto',
       grabCursor: true,
       navigation: {
         disabledClass: 'disabled',
         nextEl: '[data-slider-arrow="next"]',
         prevEl: '[data-slider-arrow="prev"]',
-      },
-      breakpoints: {
-        1920: {
-          slidesPerView: 3.3,
-        },
-        1440: {
-          slidesPerView: 3.2,
-        },
-        992: {
-          slidesPerView: 2.1,
-        },
-        768: {
-          slidesPerView: 1.9,
-        },
-        320: {
-          slidesPerView: 1.2,
-        },
       },
     })
   } else {
