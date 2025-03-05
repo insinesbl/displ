@@ -41,7 +41,7 @@ $(() => {
     addActiveFromScrollDataRoom()
   }
 
-  // Say about us slider
+  // "Say about us" slider
   const sliderAboutUs = document.querySelector('[data-slider="about-us"]')
   if (sliderAboutUs) {
     new Swiper(sliderAboutUs, {
@@ -55,7 +55,7 @@ $(() => {
       },
     })
   } else {
-    console.warn('Swiper slider [data-sliderabout-us"] not found.')
+    console.warn('Swiper slider [data-slider="about-us"] not found.')
   }
 
   const sliderReview = document.querySelector('[data-slider="reviews"]')
