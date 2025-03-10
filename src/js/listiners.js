@@ -8,7 +8,10 @@ import { topBannerToggle } from './top-banner-toggle.js'
 export const addAllListiners = () => {
   document
     .querySelector('[data-top-banner="close"]')
-    ?.addEventListener('click', () => {
+    ?.addEventListener('click', event => {
+      event.stopPropagation()
+      event.preventDefault()
+
       Cookies.set(`top-banner`, 'hide', { expires: 10 })
       topBannerToggle('hide')
     })
