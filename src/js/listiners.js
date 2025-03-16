@@ -77,6 +77,7 @@ export const addAllListiners = () => {
         .parents('[data-case="trigger"], [data-video="trigger"]')
         .on('mouseover', ({ currentTarget }) => {
           $(currentTarget).find('[data-video-icon]').addClass('video--active')
+          $(currentTarget).find('[data-case="poster"]').hide()
           video.play().catch(error => {
             if (error.name === 'AbortError') {
               console.log('play() was interrupted by pause().')

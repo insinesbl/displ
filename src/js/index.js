@@ -58,29 +58,12 @@ $(() => {
     console.warn('Swiper slider [data-slider="about-us"] not found.')
   }
 
-  const sliderReview = document.querySelector('[data-slider="reviews"]')
-  if (sliderReview) {
-    new Swiper(sliderReview, {
-      spaceBetween: 10,
-      slidesPerView: 'auto',
-      grabCursor: true,
-      navigation: {
-        disabledClass: 'disabled',
-        nextEl: '[data-slider-arrow="next"]',
-        prevEl: '[data-slider-arrow="prev"]',
-      },
-    })
-  } else {
-    console.warn('Swiper review slider not found.')
-  }
-
   // "Say about us" slider
   const sliderUseCases = document.querySelector('[data-slider="use-cases"]')
   if (sliderUseCases) {
     new Swiper(sliderUseCases, {
       spaceBetween: 20,
       slidesPerView: 'auto',
-      grabCursor: true,
       navigation: {
         disabledClass: 'disabled',
         nextEl: '[data-slider-arrow="next"]',
