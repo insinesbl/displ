@@ -140,4 +140,33 @@ export const addAllListiners = () => {
   document.querySelectorAll('input[type="tel"]').forEach(input => {
     observer.observe(input)
   })
+
+  // IntersectionObserver video play
+  const videos = document.querySelectorAll('video[data-play-observer]')
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (
+            entry.isIntersecting &&
+            entry.target instanceof HTMLVideoElement
+          ) {
+            entry.target.play()
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      {
+        threshold: 0.3,
+      }
+    )
+
+    videos.forEach(video => {
+      observer.observe(video)
+    })
+  } else {
+    videos.forEach(video => {
+      video.play()
+    })
+  }
 }
