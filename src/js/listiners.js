@@ -40,12 +40,14 @@ export const addAllListiners = () => {
       }
 
       const modal = currentTarget.getAttribute('data-modal-open')
+      const youtubeId = currentTarget.getAttribute('data-youtube')
+
       if (!modal) {
         console.log('The type is not specified')
         return
       }
 
-      modalWindow.open(modal)
+      modalWindow.open(modal, youtubeId)
 
       if (modal === 'cookie-preferences') {
         document.querySelector('[data-cookie="wrapper"]').style.display = 'none'

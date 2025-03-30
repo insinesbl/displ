@@ -17,7 +17,6 @@ import { updateCasesContent } from './recources/update-cases-content.js'
 import { addDropDownListeners } from './add-dropdown-listeners.js'
 import { addActiveFromScrollDataRoom } from './add-class-from-scroll.js'
 import { updateLocalDropdown } from './update-local-dropdown.js'
-// import { initYoutube } from './youtube-player.js'
 
 $(() => {
   updateBlogGrid()
@@ -33,8 +32,6 @@ $(() => {
   addAllListiners() // add all listiners
   fixAnchorLinks() // fix anchor links
   moveLastItemCase() // Last item in cases move to grid cases
-
-  // initYoutube()
 
   if (document.querySelectorAll('[data-dropdown]').length > 0) {
     addDropDownListeners()
