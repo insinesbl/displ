@@ -3,5 +3,4 @@ export const updateLocalDropdown = () => {
   const currentLocalName = $(`[data-local-item="${currentLocal}"]`).eq(0).text()
 
   $('[data-local-toggle]').text('').text(currentLocalName)
-  // $(`[data-local-item="${currentLocal}"]`).remove() // remove current local in dropdown list
 }

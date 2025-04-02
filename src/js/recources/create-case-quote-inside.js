@@ -7,8 +7,6 @@ export const createCaseQuoteInside = paragraph => {
     const text = parts[2].trim().replace('}}', '')
 
     const contentDiv = document.createElement('div')
-    // contentDiv.className = 'content content--full'
-    // contentDiv.setAttribute('data-banner-wrap', '')
 
     const quoteInsideElement = document.querySelector(
       '[data-case="quote-inside-wrap"]'
@@ -29,8 +27,6 @@ export const createCaseQuoteInside = paragraph => {
 
       paragraph.parentNode?.insertBefore(contentDiv, paragraph)
       contentDiv.appendChild(copiedElement)
-
-      // paragraph.remove()
     }
   }
 
