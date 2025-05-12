@@ -1,6 +1,13 @@
-export const updateLocalDropdown = () => {
-  const currentLocal = $('html').attr('data-wf-locale')
-  const currentLocalName = $(`[data-local-item="${currentLocal}"]`).eq(0).text()
+const LANG_MAP = {
+  en: 'English',
+  es: 'Spanish',
+  fr: 'French',
+  de: 'German',
+}
 
-  $('[data-local-toggle]').text('').text(currentLocalName)
+export const updateLocalDropdown = () => {
+  const lang = $('html').attr('lang')
+  const currentLocalName = LANG_MAP[lang] || 'Unknown'
+
+  $('[data-local-toggle]').text(currentLocalName)
 }
