@@ -29,7 +29,9 @@ $(() => {
   setUTMCookies()
   sendParamsToPlatform()
   addFormInputs() // add hide inputs in form
+
   addAllListiners() // add all listiners
+
   fixAnchorLinks() // fix anchor links
   moveLastItemCase() // Last item in cases move to grid cases
 
