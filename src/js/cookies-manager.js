@@ -45,6 +45,18 @@ export const setUTMCookies = () => {
   const slicedParamsStr = paramsStr.slice(1)
 
   if (slicedParamsStr.length > 0) {
+    document
+      .querySelectorAll('form[redirect*="https://calendly.com"]')
+      .forEach(form => {
+        const originalRedirect = form.getAttribute('redirect')
+        const updatedRedirect = originalRedirect.includes('?')
+          ? `${originalRedirect}&${slicedParamsStr}`
+          : `${originalRedirect}?${slicedParamsStr}`
+
+        form.setAttribute('redirect', updatedRedirect)
+        form.setAttribute('data-redirect', updatedRedirect)
+      })
+
     if (Cookies.get('cdispl_marketing') === 'deny') {
       document.querySelectorAll('a').forEach(button => {
         if (button.href.includes('.displayforce.')) {
