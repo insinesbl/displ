@@ -20,7 +20,6 @@ export const createCaseQuoteInside = paragraph => {
       '[data-case="quote-inside-text"]'
     )
 
-    console.log(text)
     if (copiedElement && quoteTextElement && quotePhotoElement) {
       quoteTextElement.textContent = text
       quotePhotoElement.src = srcPhoto
