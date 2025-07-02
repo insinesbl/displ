@@ -10,7 +10,10 @@ const moveCaseMedia = paragraph => {
 }
 
 export const updateCasesContent = () => {
-  if (window.location.pathname.includes('/customer-projects/')) {
+  if (
+    window.location.pathname.includes('/customer-projects/') ||
+    window.location.pathname.includes('/case-studies/')
+  ) {
     document.querySelectorAll('p').forEach(paragraph => {
       const text = paragraph.textContent
 
